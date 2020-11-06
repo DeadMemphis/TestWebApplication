@@ -1,0 +1,17 @@
+﻿[ // json db set ( ͡° ͜ʖ ͡°)
+  {
+    "Id": 1,
+    "Name": "Cup",
+    "Category": "Household products"
+  },
+  {
+    "Id": 2,
+    "Name": "AND Radeon RX 5700 XT",
+    "Category": "Compucters accessories"
+  },
+  {
+    "Id": 3,
+    "Name": "Steak",
+    "Category": "Meat products"
+  }
+]
