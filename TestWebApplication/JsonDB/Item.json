@@ -1,16 +1,16 @@
-﻿[ // json db set ( ͡° ͜ʖ ͡°)
+[  
   {
-    "Id": 1,
+    "Id": 111,
     "Name": "Cup",
     "Category": "Household products"
   },
   {
-    "Id": 2,
+    "Id": 222,
     "Name": "AND Radeon RX 5700 XT",
     "Category": "Compucters accessories"
   },
   {
-    "Id": 3,
+    "Id": 333,
     "Name": "Steak",
     "Category": "Meat products"
   }

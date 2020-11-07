@@ -1,3 +1,57 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
+
+<h1>All Items</h1>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th id='sort-category'>Category</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td>@item.Category</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@*create/update*@
+<h1>Add or Update Item</h1>
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    TestWebApplication.Models.Item item = new TestWebApplication.Models.Item();
+    <label asp-for="@item.Id">ID</label>
+    <br />
+    <input type="text" asp-for="@item.Id" name="Id" />
+    <br />
+    <br />
+    <label asp-for="@item.Name">Name</label>
+    <br />
+    <input type="text" asp-for="@item.Name" name="Name" />
+    <br />
+    <br />
+    <label asp-for="@item.Category">Category</label>
+    <br />
+    <input type="text" asp-for="@item.Category" name="Category" />
+    <button type="submit">Add/Update</button>
+}
+
+@*delete*@
+<h1>Delete Item</h1>
+@using (Html.BeginForm("Delete", "Home", FormMethod.Post))
+{
+    TestWebApplication.Models.Item item = new TestWebApplication.Models.Item();
+    <label asp-for="@item.Id">ID</label>
+    <br />
+    <input type="text" asp-for="@item.Id" name="Id" />
+    <br />
+    <button type="submit" name="submit">Delete</button>
+}

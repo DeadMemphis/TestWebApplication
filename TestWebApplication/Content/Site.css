@@ -22,3 +22,66 @@ select,
 textarea {
     max-width: 280px;
 }
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    display: block;
+    text-align: center;
+    background: #009879;
+    height: 50px;
+    color: white;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 40px auto;
+    font-size: 16px;
+    min-width: 570px;
+    border-radius: 15px 15px 0px 0px;   
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+thead tr{
+    font-weight: bold;
+    text-align: left;
+    font-size: 18px;
+    background: #009879;
+}
+
+thead th {
+    padding: 12px 15px;
+    color: white;
+}
+
+thead th:first-child {
+    border-top-left-radius: 15px;
+}
+
+thead th:last-child {
+    border-top-right-radius: 15px;
+}
+
+thead th:hover {
+    background: #007b62;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+tbody tr:nth-of-type(even) {
+    background: #f3f3f3;
+}
+
+tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+tbody td {
+    padding: 12px 15px;
+    outline: none;
+}
