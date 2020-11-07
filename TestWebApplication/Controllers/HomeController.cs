@@ -45,10 +45,10 @@ namespace TestWebApplication.Controllers
         
         public ActionResult Edit(int ItemId)
         {
-            int index = jsondb.itemsSet.FindIndex(x => x.Id == ItemId);
-            if (index != null)
+            Item itemToEdit = jsondb.itemsSet.Find(x => x.Id == ItemId);
+            if (itemToEdit != null)
             {
-                return PartialView("Edit", jsondb.itemsSet[index]);
+                return PartialView("Edit", itemToEdit);
             }
             return View("Index");
         }
