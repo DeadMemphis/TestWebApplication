@@ -1,17 +1,1 @@
-[  
-  {
-    "Id": 111,
-    "Name": "Cup",
-    "Category": "Household products"
-  },
-  {
-    "Id": 222,
-    "Name": "AND Radeon RX 5700 XT",
-    "Category": "Compucters accessories"
-  },
-  {
-    "Id": 333,
-    "Name": "Steak",
-    "Category": "Meat products"
-  }
-]
+[{"Id":111,"Name":"Cup","Category":"Household products"},{"Id":222,"Name":"AND Radeon RX 4700 XT","Category":"Compucters accessories"},{"Id":333,"Name":"Steak","Category":"Meat products"},{"Id":555,"Name":"Nvigia Geforce RTX 3090","Category":"Compucters accessories"}]

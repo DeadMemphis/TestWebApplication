@@ -31,7 +31,7 @@ textarea {
 h1 {
     display: block;
     text-align: center;
-    background: #009879;
+    background: #007dff;
     height: 50px;
     color: white;
 }
@@ -45,11 +45,11 @@ table {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
-thead tr{
+thead tr {
     font-weight: bold;
     text-align: left;
     font-size: 18px;
-    background: #009879;
+    background: #007dff;
 }
 
 thead th {
@@ -65,9 +65,9 @@ thead th:last-child {
     border-top-right-radius: 15px;
 }
 
-thead th:hover {
-    background: #007b62;
-}
+    thead th:hover {
+        background: #007dff;
+    }
 
 tbody tr {
     border-bottom: 1px solid #dddddd;
@@ -77,11 +77,19 @@ tbody tr:nth-of-type(even) {
     background: #f3f3f3;
 }
 
-tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
+    tbody tr:last-of-type {
+        border-bottom: 2px solid #007dff;
+    }
 
 tbody td {
     padding: 12px 15px;
     outline: none;
 }
+
+a.my_class {
+    color: #ffdca3
+}
+
+    a.my_class:visited {
+        color: #ffe4e1
+    }

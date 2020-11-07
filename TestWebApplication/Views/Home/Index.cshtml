@@ -1,4 +1,6 @@
-﻿@{
+﻿@model PagedList.IPagedList<TestWebApplication.Models.Item>
+@using PagedList.Mvc;
+@{
     ViewBag.Title = "Home Page";
 }
 
@@ -8,50 +10,35 @@
         <tr>
             <th>ID</th>
             <th>Name</th>
-            <th id='sort-category'>Category</th>
+            <th>
+                @Html.ActionLink("Category", "Index",
+               new { sortOrder = ViewBag.CategorySortParm },
+               new { @class = "my_class" })
+            </th>
+            <th>Options</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>@item.Id</td>
-                <td>@item.Name</td>
-                <td>@item.Category</td>
-            </tr>
+        <tr>
+            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+            <td>@Html.DisplayFor(modelItem => item.Name)</td>
+            <td>@Html.DisplayFor(modelItem => item.Category)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { ItemId = item.Id })
+                @Html.ActionLink("Delete", "Delete", new { ItemId = item.Id })
+            </td>
+        </tr>
         }
     </tbody>
 </table>
+<br />
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
 
-@*create/update*@
-<h1>Add or Update Item</h1>
-@using (Html.BeginForm("Index", "Home", FormMethod.Post))
-{
-    TestWebApplication.Models.Item item = new TestWebApplication.Models.Item();
-    <label asp-for="@item.Id">ID</label>
-    <br />
-    <input type="text" asp-for="@item.Id" name="Id" />
-    <br />
-    <br />
-    <label asp-for="@item.Name">Name</label>
-    <br />
-    <input type="text" asp-for="@item.Name" name="Name" />
-    <br />
-    <br />
-    <label asp-for="@item.Category">Category</label>
-    <br />
-    <input type="text" asp-for="@item.Category" name="Category" />
-    <button type="submit">Add/Update</button>
-}
+@Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, sortOrder = ViewBag.CurrentSort }))
 
-@*delete*@
-<h1>Delete Item</h1>
-@using (Html.BeginForm("Delete", "Home", FormMethod.Post))
-{
-    TestWebApplication.Models.Item item = new TestWebApplication.Models.Item();
-    <label asp-for="@item.Id">ID</label>
-    <br />
-    <input type="text" asp-for="@item.Id" name="Id" />
-    <br />
-    <button type="submit" name="submit">Delete</button>
-}
+@*create*@
+<h1> Create new item</h1>
+<p>@Html.ActionLink("Add", "Create")<p>
