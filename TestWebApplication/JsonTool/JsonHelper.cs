@@ -13,19 +13,24 @@ namespace TestWebApplication.JsonTool
     {
         private string path = AppDomain.CurrentDomain.BaseDirectory;
         private string DBName = "Item.json";
-        public static JsonHelper instanse;
-        public JsonRead Reader { get; set; }
-        public JsonWrite Writer { get; set; }
+        private readonly static JsonHelper instanse = new JsonHelper();
+        private JsonRead Reader { get; set; }
+        private JsonWrite Writer { get; set; }
         //db context
         public List<Item> itemsSet;
-        public JsonHelper()
+        private JsonHelper()
         {
-            if(this == null) instanse = this;
             path = GetWorkingDirecrory();
             Reader = new JsonRead();
             Writer = new JsonWrite();
             itemsSet = JsonConvert.DeserializeObject<List<Item>>(Load());
         }
+
+        public static JsonHelper GetInstance()
+        {
+            return instanse;
+        }
+
         private string GetWorkingDirecrory()
         {
             string dir = string.Empty;

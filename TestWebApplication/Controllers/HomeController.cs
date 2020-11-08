@@ -12,7 +12,7 @@ namespace TestWebApplication.Controllers
 {
     public class HomeController : Controller
     {
-        JsonHelper jsondb = new JsonHelper();
+        JsonHelper jsondb = JsonHelper.GetInstance();
         public ActionResult Index(string sortOrder, int? page)
         {
             ViewBag.CategorySortParm = String.IsNullOrEmpty(sortOrder) ? "category_desc" : "";
